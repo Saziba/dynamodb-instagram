@@ -1,0 +1,59 @@
+###
+
+
+@baseUrl = http://localhost:3000/dev/
+
+# @name addPhoto1
+POST {{baseUrl}}users/charlesdarwin/photos
+content-type: application/json
+
+{
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Beagle_Faraon.JPG/280px-Beagle_Faraon.JPG"
+}
+
+####
+# @name addPhoto2
+POST http://localhost:3000/dev/users/charlesdarwin/photos
+content-type: application/json
+
+{
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Lobo_marino_%28Zalophus_californianus_wollebaeki%29%2C_Punta_Pitt%2C_isla_de_San_Crist%C3%B3bal%2C_islas_Gal%C3%A1pagos%2C_Ecuador%2C_2015-07-24%2C_DD_11.JPG/1280px-Lobo_marino_%28Zalophus_californianus_wollebaeki%29%2C_Punta_Pitt%2C_isla_de_San_Crist%C3%B3bal%2C_islas_Gal%C3%A1pagos%2C_Ecuador%2C_2015-07-24%2C_DD_11.JPG"
+}
+
+####
+http://localhost:3000/dev/users
+http://localhost:3000/dev/users/{username}
+http://localhost:3000/dev/users/{username}/photos
+http://localhost:3000/dev/users/{username}/photos/{photoId}
+http://localhost:3000/dev/users/{username}/photos/{photoId}/likes
+http://localhost:3000/dev/users/{username}/photos/{photoId}/likes
+http://localhost:3000/dev/users/{username}/photos/{photoId}/comments
+http://localhost:3000/dev/users/{username}/photos/{photoId}/comments
+http://localhost:3000/dev/users/{username}/followers
+http://localhost:3000/dev/users/{username}/followers
+http://localhost:3000/dev/users/{username}/following
+
+
+####
+
+@photoId1 = {{addPhoto1.response.body.photo.photoId}}
+GET http://localhost:3000/dev/users/charlesdarwin/photos/{{photoId1}}
+content-type: application/json
+
+####
+@photoId2 = {{addPhoto2.response.body.photo.photoId}}
+GET http://localhost:3000/dev/users/charlesdarwin/photos/{{photoId2}}
+content-type: application/json
+
+####
+GET http://localhost:3000/dev/users/charlesdarwin
+content-type: application/json
+
+####
+GET http://localhost:3000/dev/users/robert
+content-type: application/json
+
+####
+GET http://localhost:3000/dev/users/susannah
+content-type: application/json
+
