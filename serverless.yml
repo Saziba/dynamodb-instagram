@@ -27,7 +27,7 @@ provider:
               - Arn
             - "index/GSI1"
   environment:
-    TABLE_NAME: { Ref: InstagramTable }
+    TABLE_NAME: InstagramTable
 
 functions:
   createUser:

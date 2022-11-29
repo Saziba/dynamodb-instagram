@@ -8,7 +8,8 @@ export const getClient = (): DynamoDB => {
         httpOptions: {
             connectTimeout: 1000,
             timeout: 1000
-        }
+        },
+        endpoint: "http://localhost:8000",
     })
     return client
 }

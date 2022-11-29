@@ -1,0 +1,25 @@
+TableName: 'InstagramTable' # [REQUIRED] The name of the table to create.
+AttributeDefinitions:  # [REQUIRED] An array of attributes that describe the key schema for the table and indexes.
+  - AttributeName: 'PK'  # [REQUIRED] A name for the attribute.
+    AttributeType: S # [REQUIRED] The data type for the attribute, where. Valid values are: S, N, B.
+  - AttributeName: 'SK'  # [REQUIRED] A name for the attribute.
+    AttributeType: S # [REQUIRED] The data type for the attribute, where. Valid values are: S, N, B.
+  - AttributeName: 'GSI1PK'  # [REQUIRED] A name for the attribute.
+    AttributeType: S # [REQUIRED] The data type for the attribute, where. Valid values are: S, N, B.
+  - AttributeName: 'GSI1SK'  # [REQUIRED] A name for the attribute.
+    AttributeType: S # [REQUIRED] The data type for the attribute, where. Valid values are: S, N, B.
+KeySchema: # [REQUIRED] Specifies the attributes that make up the primary key for a table or an index.
+  - AttributeName: 'PK'  # [REQUIRED] The name of a key attribute.
+    KeyType: HASH # [REQUIRED] The role that this key attribute will assume. Valid values are: HASH, RANGE.
+  - AttributeName: 'SK'  # [REQUIRED] The name of a key attribute.
+    KeyType: RANGE # [REQUIRED] The role that this key attribute will assume. Valid values are: HASH, RANGE.
+GlobalSecondaryIndexes: # One or more global secondary indexes (the maximum is 20) to be created on the table.
+- IndexName: 'GSI1'  # [REQUIRED] The name of the global secondary index.
+  KeySchema: # [REQUIRED] The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types.
+    - AttributeName: 'GSI1PK'  # [REQUIRED] The name of a key attribute.
+      KeyType: HASH # [REQUIRED] The role that this key attribute will assume. Valid values are: HASH, RANGE.
+    - AttributeName: 'GSI1SK'  # [REQUIRED] The name of a key attribute.
+      KeyType: RANGE # [REQUIRED] The role that this key attribute will assume. Valid values are: HASH, RANGE.
+  Projection: # [REQUIRED] Represents attributes that are copied (projected) from the table into the global secondary index.
+    ProjectionType: ALL  # The set of attributes that are projected into the index. Valid values are: ALL, KEYS_ONLY, INCLUDE.
+BillingMode: PAY_PER_REQUEST # Controls how you are charged for read and write throughput and how you manage capacity. Valid values are: PROVISIONED, PAY_PER_REQUEST.

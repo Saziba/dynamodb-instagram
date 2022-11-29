@@ -4,6 +4,7 @@
 
 ### Table of Contents
 
+- [Pre-requisites](#pre-requisites)
 - [Usage](#usage)
 - [Terms & Concepts](#terms-and-concepts)
 - [DynamoDB patterns](#dynamodb-patterns)
@@ -13,6 +14,12 @@ You may also refer to the following artifacts to understand this project:
 - [Entity chart](https://docs.google.com/spreadsheets/d/1IWVXyiJ0y4DF6ii-H6vKCF0qQUZr4akI59IaiL1ArIs/edit#gid=0?usp=sharing)
 - [Access patterns chart](https://docs.google.com/spreadsheets/d/1IWVXyiJ0y4DF6ii-H6vKCF0qQUZr4akI59IaiL1ArIs/edit#gid=1488945379?usp=sharing)
 
+## Pre-requisites
+
+- docker (WSL2 on Windows machines)
+- npm
+- aws-cli
+
 ## Usage
 
 To deploy this project, run the following commands in your terminal:
@@ -20,7 +27,11 @@ To deploy this project, run the following commands in your terminal:
 ```bash
 git clone git@github.com:alexdebrie/dynamodb-instagram.git && cd dynamodb-instagram
 npm i
-sls deploy
+
+docker-compose up
+
+aws dynamodb create-table --cli-input-yaml file://model.yaml --endpoint-url http://localhost:8000 
+
 ```
 
 You should see output indicating the service was deployed and your endpoints are live:

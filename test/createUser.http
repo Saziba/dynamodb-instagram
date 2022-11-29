@@ -1,0 +1,38 @@
+POST http://localhost:3000/dev/users
+content-type: application/json
+
+{
+    "username": "charlesdarwin",
+    "name":"Charles Darwin"
+}
+
+####
+POST http://localhost:3000/dev/users
+content-type: application/json
+
+{
+    "username": "robert",
+    "name":"Robert Darwin"
+}
+
+####
+POST http://localhost:3000/dev/users
+content-type: application/json
+
+{
+    "username": "susannah",
+    "name":"Susannah Darwin"
+}
+
+####
+GET http://localhost:3000/dev/users/charlesdarwin
+content-type: application/json
+
+####
+GET http://localhost:3000/dev/users/robert
+content-type: application/json
+
+####
+GET http://localhost:3000/dev/users/susannah
+content-type: application/json
+
