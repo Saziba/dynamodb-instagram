@@ -25,13 +25,12 @@ You may also refer to the following artifacts to understand this project:
 To deploy this project, run the following commands in your terminal:
 
 ```bash
-git clone git@github.com:alexdebrie/dynamodb-instagram.git && cd dynamodb-instagram
+git clone git@github.com:Saziba/dynamodb-instagram.git && cd dynamodb-instagram
 npm i
 
 docker-compose up
 
-aws dynamodb create-table --cli-input-yaml file://model.yaml --endpoint-url http://localhost:8000 
-
+AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID='DUMMYIDEXAMPLE' AWS_SECRET_ACCESS_KEY='DUMMYEXAMPLEKEY' aws dynamodb create-table --cli-input-yaml file://model.yaml --endpoint-url http://localhost:8000
 ```
 
 You should see output indicating the service was deployed and your endpoints are live:
