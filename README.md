@@ -31,6 +31,9 @@ npm i
 docker-compose up
 
 AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID='DUMMYIDEXAMPLE' AWS_SECRET_ACCESS_KEY='DUMMYEXAMPLEKEY' aws dynamodb create-table --cli-input-yaml file://model.yaml --endpoint-url http://localhost:8000
+
+AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID='DUMMYIDEXAMPLE' AWS_SECRET_ACCESS_KEY='DUMMYEXAMPLEKEY' sserverless offline start
+
 ```
 
 You should see output indicating the service was deployed and your endpoints are live:
